@@ -4,14 +4,14 @@ on:
      branches:
        - main
 jobs:
-  build-and deploy:
-    run-on: windows-latest
+  build-and-deploy:
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@master
-    - names: Deploy to azure Web App
+    - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v1
       with:
-        app-name:  'CMST-MSweeney'
+        app-name:  'CMST-MSweeney24'
         slot-name: 'production'
         publish-profile: ${{  secrets.AppServiceCMST385  }}
         
